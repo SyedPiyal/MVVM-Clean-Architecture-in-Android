@@ -17,7 +17,11 @@ class AuthViewModel @Inject constructor(
     private val signupUseCase: SignupUseCase
 ) : ViewModel() {
 
+
+
     // Login function returning ApiResult
+
+    //liveData is a builder that allows you to emit data to the LiveData stream asynchronously
     fun login(user: User) = liveData(Dispatchers.IO) {
         emit(ApiResult.Loading())  // Emit loading state
         try {
